@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.5s ease;
+}
+
+/* Weather-based backgrounds */
+body {
+    background: #4facfe;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+body.sunny {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+body.cloudy {
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%);
+}
+
+body.rainy {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+body.stormy {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+body.snowy {
+    background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+}
+
+body.foggy {
+    background: linear-gradient(135deg, #bdbbbe 0%, #9d9ea3 100%);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* ... (keep all your existing styles) ... */
+
+/* Add these new animations */
+.weather-card {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.weather-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.weather-details {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error-message {
+    color: #ff4757;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .temperature {
+        font-size: 36px;
+    }
+}
